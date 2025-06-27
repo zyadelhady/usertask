@@ -35,6 +35,23 @@ This is a simple RESTful API for managing users, built with NestJS and MongoDB.
 
 The application will be running at `http://localhost:3000`.
 
+## Running with Docker
+
+Alternatively, you can run the application using Docker and Docker Compose:
+
+1.  **Build and run the Docker containers:**
+
+    ```bash
+    docker-compose up --build
+    ```
+
+    This will build the NestJS application image and start both the application and MongoDB containers.
+
+2.  **Access the application:**
+
+    The application will be available at `http://localhost:3000` (or the port you configured in your `.env` file).
+
+
 ## API Endpoints
 
 ### Create User
