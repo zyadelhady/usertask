@@ -56,11 +56,11 @@ export class UsersService {
     return plainToClass(UserResponseDto, existingUser.toObject());
   }
 
-  async remove(id: string): Promise<UserResponseDto> {
-    const deletedUser = await this.userModel.findByIdAndDelete(id).exec();
-    if (!deletedUser) {
+  async remove(id: string): Promise<boolean> {
+    const result = await this.userModel.deleteOne({ _id: id }).exec();
+    if (result.deletedCount === 0) {
       throw new NotFoundException(`User with id ${id} not found`);
     }
-    return plainToClass(UserResponseDto, deletedUser.toObject());
+    return true;
   }
 }

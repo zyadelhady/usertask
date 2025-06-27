@@ -43,7 +43,7 @@ export class UsersController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string): Promise<UserResponseDto> {
+  remove(@Param('id') id: string): Promise<boolean> {
     return this.usersService.remove(id);
   }
 }
