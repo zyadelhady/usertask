@@ -10,7 +10,7 @@ services:
     depends_on:
       - mongodb
     environment:
-      MONGODB_URI: mongodb://mongodb:27017/nest_db
+      MONGODB_URI: mongodb://admin:password@mongodb:27017/nest_db?authSource=admin
       NODE_ENV: development
     volumes:
       - ./nestjs-app:/app
